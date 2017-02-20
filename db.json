@@ -1,0 +1,44 @@
+{
+  "profiles": [
+    {
+      "name": "plop",
+      "bindings": [
+        {
+          "reset": true,
+          "shortcut": "r",
+          "counter": 0,
+          "image": "reset.png"
+        }
+      ]
+    },
+    {
+      "name": "romain",
+      "bindings": [
+        {
+          "reset": true,
+          "shortcut": "r",
+          "counter": 0,
+          "image": "reset.png"
+        },
+        {
+          "reset": false,
+          "shortcut": "a",
+          "counter": 0,
+          "image": "icon.png"
+        },
+        {
+          "reset": false,
+          "shortcut": "a",
+          "counter": 0,
+          "image": "icon.png"
+        },
+        {
+          "reset": false,
+          "shortcut": "a",
+          "counter": 0,
+          "image": "icon.png"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "item-counter",
+  "version": "1.0.0",
+  "description": "A simple program to count things you want to keep track of",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/romaindurand/item-counter.git"
+  },
+  "keywords": [
+    "item",
+    "card",
+    "counter",
+    "keyboard",
+    "binding"
+  ],
+  "author": "@romaindurand",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/romaindurand/item-counter/issues"
+  },
+  "homepage": "https://github.com/romaindurand/item-counter#readme",
+  "dependencies": {
+    "electron": "^1.4.15",
+    "jquery": "^3.1.1"
+  }
+}
