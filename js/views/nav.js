@@ -82,11 +82,11 @@ class NavView extends BaseView {
     $navProfileItem.click(this.handleProfileNav.bind(this, name, $navProfileItem))
     this.$sidebar.find('.active').removeClass('active')
     this.$sidebar.find('.profiles').append($navProfileItem)
-    const profile = new ProfileView(this.db, nameOrConf)
-    profile.onDelete(this.deleteProfile.bind(this, $navProfileItem))
-    this.profileViews.push(profile)
+    const profileView = new ProfileView(this.db, nameOrConf)
+    profileView.onDelete(this.deleteProfile.bind(this, $navProfileItem))
+    this.profileViews.push(profileView)
     this.hideAllChilds()
-    this.$el.append(profile.$el)
+    this.$el.append(profileView.$el)
     this.db.save('profiles')
   }
 

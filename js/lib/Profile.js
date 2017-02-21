@@ -1,6 +1,5 @@
 const KeyBinding = require('./KeyBinding')
 
-
 class Profile {
   constructor (name) {
     if (!name) throw new Error('invalid parameters (name/conf)')
@@ -9,7 +8,9 @@ class Profile {
       this.bindings = []
     } else if (typeof name === 'object') {
       const conf = name
-      Object.assign(this, conf)
+      this.bindings = conf.bindings.map(binding => {
+        return new KeyBinding(conf)
+      })
     } else throw new Error('parameter must be either a string or a config object')
   }
 

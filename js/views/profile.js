@@ -61,13 +61,22 @@ class ProfileView extends BaseView {
 
   createKeyBindingView (keyBinding) {
     const keyBindingView = new KeyBindingView(this.db, keyBinding)
-    keyBindingView.onDelete(this.deleteBinding.bind(this))
+    keyBindingView.on('delete', this.deleteBinding.bind(this))
+    keyBindingView.on('bindingChange', this.changeBinding.bind(this))
     this.$el.find('ul').append(keyBindingView.$el)
   }
 
   refreshList () {
     this.$el.find('li').remove()
     this.profile.bindings.forEach(this.createKeyBindingView.bind(this))
+  }
+
+  changeBinding (bindingToChange) {
+    const index = this.profile.bindings.findIndex(binding => binding === bindingToChange)
+    if (index === -1) return
+    this.profile.bindings[index] = bindingToChange
+    this.db.save('profiles')
+    this.refreshList()
   }
 
   deleteBinding (bindingToDelete) {
