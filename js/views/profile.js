@@ -6,12 +6,11 @@ const Profile = require('../lib/Profile')
 class ProfileView extends BaseView {
   constructor (db, nameOrConf) {
     super(db)
-    this.profile = new Profile(nameOrConf)
+    this.profile = new Profile(db, nameOrConf)
     this.$el = this.render()
     this.name = typeof nameOrConf === 'string' ? nameOrConf : nameOrConf.name
     this.$el = this.render()
     if (typeof nameOrConf === 'string') {
-      this.store.profiles.push(this.profile)
       this.addBinding()
     }
     this.refreshList()

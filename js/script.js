@@ -5,7 +5,7 @@ const Db = require('./lib/db')
 const db = new Db()
 
 if (db.store.profiles) {
-  db.store.profiles = db.store.profiles.map(profile => {
+  db.store.profiles = db.store.profiles.map((profile, index) => {
     return new Profile(profile)
   })
 }

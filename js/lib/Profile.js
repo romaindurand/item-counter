@@ -8,6 +8,7 @@ class Profile {
       this.bindings = []
     } else if (typeof name === 'object') {
       const conf = name
+      this.name = conf.name
       this.bindings = conf.bindings.map(binding => {
         return new KeyBinding(conf)
       })
